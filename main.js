@@ -12,10 +12,11 @@ console.log(process.platform);
 if(process.platform == 'darwin'){
 	var lanktillfranz = op.homedir() + '/Library/Application Support/Franz/recipes/';
 }else if(process.platform == 'win32'){
-	var lanktillfranz = op.homedir() + '%appdata%/Franz/recipes/';
+	var lanktillfranz = op.homedir() + '/AppData/Roaming/Franz/recipes/';
 }else if(process.platform == 'linux'){
 	var lanktillfranz = op.homedir() + '/.config/Franz/recipes/';
 };
+console.log(lanktillfranz);
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
