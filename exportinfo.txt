@@ -1,0 +1,4 @@
+Exportera till MAC
+https://github.com/electron-userland/electron-packager
+
+electron-packager . --no-prune --icon /Users/mattiaslidbeck/franz-icon.icns
