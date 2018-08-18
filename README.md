@@ -16,11 +16,11 @@ The program is based on Electron, so download git repo and start with:
 ```
 npm start
 ```
-When the project is complete, installation files will be prepacked.
+Later when the project is complete, installation files will be prepacked.
 
 ## Todo
 * Support Linux
 * More ICONS!
-* Language support...
-* Code shortcuts should look like buttons.
+* Different language support...
 * Style needs more work (its windows 95 now..)
+* Support adding svg as icon
