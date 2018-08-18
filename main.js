@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, ipcMain} = require('electron')
+const {shell, app, BrowserWindow, ipcMain} = require('electron')
 
 var fs = require('fs') // Läser filer
 var makeDir = require('make-dir'); // Skapar mappar
@@ -145,6 +145,9 @@ function makeproject(projectfolder, packagejson, indexjs, webviewjs, iconsvg){
 		fs.writeFileSync(projectfolder + 'icon.svg', iconsvg, 'utf-8');
 	});
 };
+ipcMain.on('opendev', (event, data) => {
+	shell.openItem(lanktillfranz + 'dev/');
+});
 ///////////////////
 
 // This method will be called when Electron has finished

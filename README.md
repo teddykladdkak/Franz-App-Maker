@@ -19,7 +19,8 @@ npm start
 When the project is complete, installation files will be prepacked.
 
 ## Todo
-* Make the program support Windows.
-* Review the text, and make it more "nice" to read.
+* Support Linux
 * More ICONS!
 * Language support...
+* Code shortcuts should look like buttons.
+* Style needs more work (its windows 95 now..)

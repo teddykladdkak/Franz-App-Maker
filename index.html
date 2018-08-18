@@ -37,7 +37,7 @@
 			}
 			#todolist {
 				display: block;
-				margin-bottom: 20px;
+				margin: 20px 0px;
 			}
 			#iconpreview, #iconpreview svg {
 				display: inline-block;
@@ -49,6 +49,16 @@
 			.svg-inline--fa {
 				width: 20px;
 				height: 20px;
+			}
+			#errorfranzicon {
+				text-align: center;
+			}
+			#errorfranzicon .fa-exclamation-triangle {
+				width: 80px;
+				height: 80px;
+			}
+			#errorfranzicon .fa-exclamation-triangle path {
+				fill: red;
 			}
 		</style>
 		<script type="text/javascript">
@@ -92,30 +102,34 @@
 	</head>
 	<body onload="load();">
 		<div id="todo" class="wrapper">
-			<p>This is a project that aims to make the process of making new apps for the plattform "Franz" more easy.</p>
-			<p>Note! The code will be marked MIT, to enabel other developers in the community to use the same code.</p>
+			<p>This is a project that aims to make the process of creating new sources for Franz simpler.</p>
+			<p><b>Disclaimer:</b> This project is not linked to the developers of the Franz project</p>
 			<h2>Todo</h2>
-			<p>Do you want to edit a current project or make a new?</p>
+			<p>Do you want to edit a current project or create a new one?</p>
+			<button onclick="ipcRenderer.send('opendev', '0');"><svg aria-hidden="true" data-prefix="fas" data-icon="folder-open" class="svg-inline--fa fa-folder-open fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M572.694 292.093L500.27 416.248A63.997 63.997 0 0 1 444.989 448H45.025c-18.523 0-30.064-20.093-20.731-36.093l72.424-124.155A64 64 0 0 1 152 256h399.964c18.523 0 30.064 20.093 20.73 36.093zM152 224h328v-48c0-26.51-21.49-48-48-48H272l-64-64H48C21.49 64 0 85.49 0 112v278.046l69.077-118.418C86.214 242.25 117.989 224 152 224z"></path></svg> Open "Dev" folder</button>
 			<span id="todolist"></span>
 			<button onclick="removeinfo();show('wrapper');"><svg aria-hidden="true" data-prefix="fas" data-icon="plus-circle" class="svg-inline--fa fa-plus-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path></svg> New</button>
 		</div>
 		<div id="errorfranz" style="display: none;" class="wrapper">
+			<div id="errorfranzicon">
+				<svg aria-hidden="true" data-prefix="fas" data-icon="exclamation-triangle" class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg>
+			</div>
 			<h2>Error!</h2>
-			<p>This application cant find that Franz is installed on your computer. You need to install Franz before you can use this applikation.</p>
+			<p>Could not find Franz installed on your computer. Before using this program, you will need to install Franz, using the following link: <a href="https://meetfranz.com/" onclick="var shell = require('electron').shell;event.preventDefault();shell.openExternal(event.target.href);">meetfranz.com/</a></p>
 		</div>
 		<div id="wrapper" style="display: none;" class="wrapper">
 			<button onclick="location.reload();"><svg aria-hidden="true" data-prefix="fas" data-icon="arrow-circle-left" class="svg-inline--fa fa-arrow-circle-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm28.9-143.6L209.4 288H392c13.3 0 24-10.7 24-24v-16c0-13.3-10.7-24-24-24H209.4l75.5-72.4c9.7-9.3 9.9-24.8.4-34.3l-11-10.9c-9.4-9.4-24.6-9.4-33.9 0L107.7 239c-9.4 9.4-9.4 24.6 0 33.9l132.7 132.7c9.4 9.4 24.6 9.4 33.9 0l11-10.9c9.5-9.5 9.3-25-.4-34.3z"></path></svg> Back</button>
 			<button onclick="test();"><svg aria-hidden="true" data-prefix="fas" data-icon="vial" class="svg-inline--fa fa-vial fa-w-15" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path fill="currentColor" d="M477.7 186.1L309.5 18.3c-3.1-3.1-8.2-3.1-11.3 0l-34 33.9c-3.1 3.1-3.1 8.2 0 11.3l11.2 11.1L33 316.5c-38.8 38.7-45.1 102-9.4 143.5 20.6 24 49.5 36 78.4 35.9 26.4 0 52.8-10 72.9-30.1l246.3-245.7 11.2 11.1c3.1 3.1 8.2 3.1 11.3 0l34-33.9c3.1-3 3.1-8.1 0-11.2zM318 256H161l148-147.7 78.5 78.3L318 256z"></path></svg> Test</button>
 			<h2 class="line">Information</h2>
-			<p>Namn</p>
+			<p>Project name</p>
 			<input type="text" id="projectname">
 			<p>Small description</p>
 			<textarea id="description"></textarea>
-			<p>Your name</p>
+			<p>Your name (More of you? Separate names with ", ")</p>
 			<input type="name" id="username">
-			<p>E-mail? (Not needed)</p>
+			<p>E-mail (More of you? Separate e-mails with ", ")</p>
 			<input type="email" id="email">
-			<p>Link to webpage</p>
+			<p>Link to web page/source</p>
 			<input type="text" id="url">
 
 			<h2>Ikon</h2>
@@ -125,9 +139,9 @@
 			<span id="iconpreview"></span>
 
 			<h2 class="line">Advanced</h2>
-			<p>Script to search for number of notifications/messages.</p>
-			<p>You need to end the script with variable "number".</p>
-			<p>Leave emty if you dont know or want this functionality.</p>
+			<p>Here you have the opportunity to write a script that looks up the number of notifications/messages.</p>
+			<p>You must end the script with the variable "number".</p>
+			<p>Leave blank if you can't code javascript or do not want this functionality.</p>
 			<a href="#" onclick="insertAtCaret('advanced', 'Det funkar!');return false;">[Test]</a>
 			<a href="#" onclick="insertAtCaret('advanced', 'document.getElementById(\'\');');return false;">[ID]</a>
 			<a href="#" onclick="insertAtCaret('advanced', 'document.getElementsByClassName(\'\')[0];');return false;">[Class]</a>
@@ -139,29 +153,6 @@
 			<p>Dont forget to end with variable "number", to tell Franz how many notifications ther is.</p>
 			<h2 class="line">Start build</h2>
 			<button onclick="build('false');"><svg aria-hidden="true" data-prefix="fas" data-icon="cookie-bite" class="svg-inline--fa fa-cookie-bite fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M510.52 255.82c-69.97-.85-126.47-57.69-126.47-127.86-70.17 0-127-56.49-127.86-126.45-27.26-4.14-55.13.3-79.72 12.82l-69.13 35.22a132.221 132.221 0 0 0-57.79 57.81l-35.1 68.88a132.645 132.645 0 0 0-12.82 80.95l12.08 76.27a132.521 132.521 0 0 0 37.16 72.96l54.77 54.76a132.036 132.036 0 0 0 72.71 37.06l76.71 12.15c27.51 4.36 55.7-.11 80.53-12.76l69.13-35.21a132.273 132.273 0 0 0 57.79-57.81l35.1-68.88c12.56-24.64 17.01-52.58 12.91-79.91zM176 368c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm32-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm160 128c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"></path></svg> Start building!</button>
-		</div>
-		<div id="instructions" style="display: none;" class="wrapper">
-			<h2 class="line">Instructions</h2>
-			<h3>Step 1</h3>
-			<p>Click the "Start building!" button above. All files will automatically be downloaded with your premission. Or you can manually create them with the code further down the page.</p>
-			<h3>Step 2</h3>
-			<p>Put all the files in the same directory, that you name the same as the project.</p>
-			<h3>Step 3</h3>
-			<p>Move the folder with all files to:</p>
-			<ul>
-			<li>Mac: ~/Library/Application Support/Franz/recipes/dev/</li>
-			<li>Windows: %appdata%/Franz/recipes/dev/</li>
-			<li>Linux: ~/.config/Franz/recipes/dev</li>
-			</ul>
-			<p>(The "dev" folder may not excist, then you have to create it.)</p>
-			<h3>Step 4</h3>
-			<p>In Franz menu click "View" and "Reload Franz"</p>
-			<h3>Step 5</h3>
-			<p>Klick the "Add new service" icon ("+").</p>
-			<h3>Step 6</h3>
-			<p>Choose the "development" tab. And the rest is the same as usual.</p>
-			<h3>For more reading</h3>
-			<p><a href="https://github.com/meetfranz/plugins/blob/master/docs/integration.md" target="_blank">https://github.com/meetfranz/plugins/blob/master/docs/integration.md</a></p>
 		</div>
 		<div id="result" style="display: none;" class="wrapper">
 			<h2 class="line">icon.svg</h2>
@@ -230,13 +221,13 @@
 				ipcRenderer.send('build', data);
 			};
 			ipcRenderer.on('projectexist', (event, arg) => {
-				var r = confirm("Previous project were found with the same name, are you sure you want to overwrite these files. Otherwise, change the name of the projet.");
+				var r = confirm("Found a previously created project with the same name, sure you want to overwrite these files? Otherwise, just click on \"Cancel\" and change the project name.");
 				if (r == true) {
 				    build('true');
 				} else {};
 			});
 			ipcRenderer.on('projectsaved', (event, arg) => {
-				alert('Projektet sparades!')
+				alert('The project was saved!')
 				location.reload();
 			});
 		</script>
