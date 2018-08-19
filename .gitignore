@@ -1,4 +1,3 @@
-
 node_modules/.bin/electron
 node_modules/electron/dist/api-ms-win-core-console-l1-1-0.dll
 node_modules/electron/dist/api-ms-win-core-datetime-l1-1-0.dll
