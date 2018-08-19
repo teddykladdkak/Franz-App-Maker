@@ -13,11 +13,23 @@ At the moment, the process is relatively slow and with this project it will be s
 
 ## How do I use it?
 The program is based on Electron, so download git repo and start with:
+### Install electron to the project
+```
+npm install electron --save-dev
+```
+### Start the program
 ```
 npm start
 ```
+### Bake into a program
 Later when the project is complete, installation files will be prepacked.
+```
+npm install electron-packager -g
+```
 
+```
+electron-packager . --no-prune --icon /Users/mattiaslidbeck/Projekt/Franz-App-Maker/icon/franz-icon_big.icns
+```
 ## Todo
 * Different language support...
 * Style needs more work (its windows 95 now..)
