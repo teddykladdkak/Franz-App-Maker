@@ -19,8 +19,5 @@ npm start
 Later when the project is complete, installation files will be prepacked.
 
 ## Todo
-* Support Linux
-* More ICONS!
 * Different language support...
 * Style needs more work (its windows 95 now..)
-* Support adding svg as icon
