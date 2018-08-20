@@ -66,6 +66,20 @@ ipcMain.on('load', (event, data) => {
 		});
 	});
 });
+ipcMain.on('fontawsomeinstall', (event, data) => {
+	fs.readdir(__dirname + '/fontawesome/svgs/brands/', function(err, filenames) {
+		if (err) {
+			console.log('Mappen för font awsome kunde inte hittas!');
+			filenames = '';
+		};
+		event.sender.send('buildfontawsome', filenames);
+		return;
+	});
+});
+ipcMain.on('fontawsomechoose', (event, data) => {
+	var svginfo = fs.readFileSync(__dirname + '/fontawesome/svgs/brands/' + data.id + '.svg', 'utf8');
+	event.sender.send('addsvg', svginfo.replace('" viewBox="', '" fill="' + data.fill + '" viewBox="'));
+});
 ipcMain.on('loadproject', (event, data) => {
 	var projectfolder = lanktillfranz + 'dev/' + data + '/';
 	fs.readdir(projectfolder, function(err, filenames) {

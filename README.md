@@ -12,8 +12,8 @@ Since Franz currently does not have any UI to create their own sources, and to c
 At the moment, the process is relatively slow and with this project it will be speeded up. The goal is to make Franz even bigger!
 
 ## Compiled version
-* [Windows (64bit).exe](https://teddyprojekt.tk/projekt/franz-maker/FranzAppMaker-win32-x64_(v._1,0).zip)
-* [Mac (64bit).app](https://teddyprojekt.tk/projekt/franz-maker/FranzAppMaker-darwin-x64_(v._1,0).zip)
+* [Windows (64bit).exe](https://teddyprojekt.tk/projekt/franz-maker/FranzAppMaker-win32-x64.zip)
+* [Mac (64bit).app](https://teddyprojekt.tk/projekt/franz-maker/FranzAppMaker-darwin-x64.zip)
 
 ## How do I use this repo?
 The program is based on Electron, so download git repo and start with:
@@ -34,9 +34,15 @@ npm start
 npm install electron-packager -g
 ```
 
+**Mac**
 ```
-electron-packager . --no-prune --icon [link to icon].[".icns" on MAC and ".ico" on windows]
+electron-packager . --no-prune --icon icon/franz-icon_big.icns
 ```
+**Windows**
+```
+electron-packager . --no-prune --icon icon/franz-icon_big.ico
+```
+
 ## Todo
 * Different language support...
 * Style needs more work (its windows 95 now..)
