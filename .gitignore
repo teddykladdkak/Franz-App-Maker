@@ -3,3 +3,7 @@ node_modules/.bin/electron
 node_modules/electron/dist/LICENSES.chromium.html
 node_modules/electron/package.json
 node_modules/electron/path.txt
+node_modules/electron/path.txt
+node_modules/electron/package.json
+node_modules/electron/dist/LICENSES.chromium.html
+node_modules/.bin/electron
