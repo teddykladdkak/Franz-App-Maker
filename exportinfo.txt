@@ -1,9 +1,0 @@
-Exportera till MAC
-https://github.com/electron-userland/electron-packager
-
-npm install electron --save-dev
-
-Mac
-electron-packager . --no-prune --icon icon/franz-icon_big.icns
-Windows
-electron-packager . --no-prune --icon icon/franz-icon_big.ico
