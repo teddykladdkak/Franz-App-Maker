@@ -23,7 +23,7 @@ cd [link to folder on computer]
 ```
 ### Install electron to the project
 ```
-npm install electron --save-dev
+npm install
 ```
 ### Start the program
 ```
