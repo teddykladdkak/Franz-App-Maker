@@ -12,8 +12,8 @@ Since Franz currently does not have any UI to create their own sources, and to c
 At the moment, the process is relatively slow and with this project it will be speeded up. The goal is to make Franz even bigger!
 
 ## Compiled version
-* [Windows (64bit).exe](https://teddyprojekt.tk/projekt/franz-maker/FranzAppMaker-win32-x64.zip)
-* [Mac (64bit).app](https://teddyprojekt.tk/projekt/franz-maker/FranzAppMaker-darwin-x64.zip)
+* [Windows (64bit).exe](https://teddyprojekt.se/projekt/franz-maker/FranzAppMaker-win32-x64.zip)
+* [Mac (64bit).app](https://teddyprojekt.se/projekt/franz-maker/FranzAppMaker-darwin-x64.zip)
 
 ## How do I use this repo?
 The program is based on Electron, so download git repo and start with:
